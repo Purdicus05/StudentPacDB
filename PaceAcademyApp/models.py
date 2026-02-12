@@ -14,7 +14,7 @@ class Students(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     department = models.CharField(max_length=100)
-    assignedPAC = models.ForeignKey(PACs, on_delete=models.CASCADE, default = null) #FK linking to pac table
+    assignedPAC = models.ForeignKey(PACs, on_delete=models.CASCADE, default = 0) #FK linking to pac table
 
     def __str__(self):
         return self.name
