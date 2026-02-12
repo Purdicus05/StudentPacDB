@@ -18,4 +18,4 @@ class Students(models.Model):
     assignedPAC = models.ForeignKey(PACs, on_delete=models.SET_DEFAULT, default = 0, related_name = "PACs") #FK linking to pac table
 
     def __str__(self):
-        return f'Name: {self.firstName} {self.surname}, Email: {self.email}, Course: {self.course}, Assigned PAC ID: {self.assignedPAC}'
+        return f'Name: {self.firstName} {self.surname}, Email: {self.email}, Course: {self.course}, PAC: {self.assignedPAC}'
