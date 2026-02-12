@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f6nbh$f2a!o9g+cvr9lt4_fs8jszy^cfe7o5u!!7j7wu4%&w8-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['studentpacdb.onrender.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'PaceAcademy.urls'
