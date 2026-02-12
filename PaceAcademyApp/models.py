@@ -15,5 +15,6 @@ class Students(models.Model):
     email = models.EmailField()
     department = models.CharField(max_length=100)
     # PAC FK here
+    assignedPAC = models.ForeignKey(PACs, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
