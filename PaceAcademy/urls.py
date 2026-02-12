@@ -21,6 +21,6 @@ from PaceAcademyApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('submission/', views.formSubmission, name='formSubmission'),
-    path('success/', views.formSuccess, name='formSuccess'),
+    path('students/', views.students, name='students'),
+    path('pacs/', views.pacs, name='pacs'),
 ]

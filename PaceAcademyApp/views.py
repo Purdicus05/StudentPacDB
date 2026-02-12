@@ -4,8 +4,8 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-def formSubmission(request):
-    return render(request, 'formSubmission.html')
+def students(request):
+    return render(request, 'students.html')
 
-def formSuccess(request):
-    return render(request, 'formSuccess.html')
+def pacs(request):
+    return render(request, 'pacs.html')
