@@ -6,7 +6,6 @@ class PACs(models.Model):
     firstName = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     email = models.EmailField()
-    course = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
