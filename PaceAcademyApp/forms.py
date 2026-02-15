@@ -1,7 +1,7 @@
 from django import forms
 from .models import Student, PACs
 
-
+# Form to add pacs
 class AddPacForm(forms.ModelForm):
     first_name = forms.CharField(max_length=100, label="First Name")
     last_name = forms.CharField(max_length=100, label="Last Name")
@@ -11,6 +11,7 @@ class AddPacForm(forms.ModelForm):
         model = PACs
         fields = ('first_name', 'last_name', 'email')
 
+ # Form to add students
 class AddStudentForm(forms.ModelForm):
     first_name = forms.CharField(max_length=100, label="First Name")
     last_name = forms.CharField(max_length=100, label="Last Name")
