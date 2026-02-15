@@ -12,7 +12,7 @@ class PACs(models.Model):
         verbose_name_plural = 'PACs'
 
     def __str__(self):
-        return f'Name: {self.first_name} {self.last_name}, Email: {self.email}'
+        return f'{self.first_name} {self.last_name} added.'
 
 class Students(models.Model):
     id = models.AutoField(primary_key=True)
@@ -20,11 +20,15 @@ class Students(models.Model):
     last_name = models.CharField(max_length=100, default='')
     email = models.EmailField(default='')
     course = models.CharField(max_length=100, default='')
-    assigned_pac = models.ForeignKey(PACs, on_delete=models.SET_DEFAULT, default = '', related_name = "PACs") #FK linking to pac table
+    assigned_pac = models.ForeignKey(PACs, on_delete=models.SET_NULL, null = True, blank = True, related_name = "PACs") #FK linking to pac table
 
     class Meta:
         verbose_name_plural = 'Students'
 
     def __str__(self):
-        return f'Name: {self.first_name} {self.last_name}, Email: {self.email}, Course: {self.course}, PAC: {self.assigned_pac}'
+        if self.assigned_pac:
+            return f"{self.first_name} {self.last_name}'s PAC is {self.assigned_pac.first_name} {self.assigned_pac.last_name}."
+        else:
+            return f"{self.first_name} {self.last_name} has no PAC."
+
 
