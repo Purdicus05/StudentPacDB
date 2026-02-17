@@ -30,21 +30,17 @@ def delete_student(request, id):
     return render(request, 'form_success.html')
 
 def add_pac(request):
-    template = loader.get_template('pac_form.html')
     return render(request, 'pac_form.html')
 
 def add_student(request):
-    template = loader.get_template('student_form.html')
     return render(request, 'student_form.html')
 
 def update_pac(request, id):
     pac = PACs.objects.get(id=id)
-    template = loaders.get_template('pac_update.html')
     context = {'pac': pac}
     return render(request, 'pac_update.html', context)
 
 def update_student(request, id):
     student = Students.objects.get(id=id)
-    template = loaders.get_template('student_update.html')
     context = {'student': student}
     return render(request, 'student_update.html', context)
