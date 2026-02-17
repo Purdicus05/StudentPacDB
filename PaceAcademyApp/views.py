@@ -1,4 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.template import loaders
+
+from .models import *
 
 # Create your views here.
 def home(request):
@@ -30,21 +34,17 @@ def delete_student(request, id):
     return render(request, 'form_success.html')
 
 def add_pac(request):
-    template = loader.get_template('pac_form.html')
-    return HttpResponse(template.render({}, request))
+        return render(request, 'add_pac.html')
 
 def add_student(request):
-    template = loader.get_template('student_form.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'add_student.html')
 
-def update_pac(request, id):
+def pac_update(request, id):
     pac = PACs.objects.get(id=id)
-    template = loaders.get_template('pac_update.html')
     context = {'pac': pac}
-    return HttpResponse(template.render(context, request))
+    return render(request, 'pac_update.html', context)
 
-def update_student(request, id):
+def student_update(request, id):
     student = Students.objects.get(id=id)
-    template = loaders.get_template('student_update.html')
     context = {'student': student}
-    return HttpResponse(template.render(context, request))
+    return render(request, 'student_update.html', context)

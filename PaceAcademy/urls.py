@@ -23,9 +23,11 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('students/', views.students, name='students'),
     path('student_form/',views.student_from, name='student_from' ),
+    path('add_student/' ,views.add_student, name='add_student' ),
     path('student_update/', views.student_update, name='student_update'),
     path('pacs/', views.pacs, name='pacs'),
     path('pac_form/',views.pac_form, name='pac_form'),
+    path('add_pac/', views.add_pac, name='add_pac'),
     path('pac_update/', views.pac_update, name='pac_update'),
     path('form_success/', views.form_success, name='form_success'),
 ]
