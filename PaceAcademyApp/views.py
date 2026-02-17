@@ -18,3 +18,33 @@ def pac_form(request):
 
 def form_success(request):
     return render(request, 'form_success.html')
+
+def delete_pac(request, id):
+    pac = PACs.objects.get(id=id)
+    pac.delete()
+    return render(request, 'form_success.html')
+
+def delete_student(request, id):
+    student = Students.objects.get(id=id)
+    student.delete()
+    return render(request, 'form_success.html')
+
+def add_pac(request):
+    template = loader.get_template('pac_form.html')
+    return HttpResponse(template.render({}, request))
+
+def add_student(request):
+    template = loader.get_template('student_form.html')
+    return HttpResponse(template.render({}, request))
+
+def update_pac(request, id):
+    pac = PACs.objects.get(id=id)
+    template = laoders.get_template('pac_update.html')
+    context = {'pac': pac}
+    return HttpResponse(template.render(context, request))
+
+def update_student(request, id):
+    student = Students.objects.get(id=id)
+    template = laoders.get_template('student_update.html')
+    context = {'student': student}
+    return HttpResponse(template.render(context, request))

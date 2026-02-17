@@ -27,3 +27,4 @@ class AddStudentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['assigned_pac'].queryset = PACs.objects.all()
+
