@@ -39,12 +39,12 @@ def add_student(request):
 
 def update_pac(request, id):
     pac = PACs.objects.get(id=id)
-    template = laoders.get_template('pac_update.html')
+    template = loaders.get_template('pac_update.html')
     context = {'pac': pac}
     return HttpResponse(template.render(context, request))
 
 def update_student(request, id):
     student = Students.objects.get(id=id)
-    template = laoders.get_template('student_update.html')
+    template = loaders.get_template('student_update.html')
     context = {'student': student}
     return HttpResponse(template.render(context, request))
