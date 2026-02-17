@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student, PACs
+from .models import Students, PACs
 
 # Form to add pacs
 class AddPacForm(forms.ModelForm):
@@ -20,10 +20,11 @@ class AddStudentForm(forms.ModelForm):
     assigned_pac = forms.ModelChoiceField(queryset=PACs.objects.none(), label="Assigned PAC")
 
     class Meta:
-        model = Student
+        model = Students
         fields = ('first_name', 'last_name', 'email', 'course', 'assigned_pac')
 
     #This function makes sure that the list of PACs is calculated at runtime not at import time
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['assigned_pac'].queryset = PACs.objects.all()
+
