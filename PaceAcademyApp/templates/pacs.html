@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
 
-{% endblock %}
+    {% block title %}PAC Portal{% endblock %}
+    {% block header %}Welcome to the PAC Portal{% endblock %}
+
+    {% block content %}
+        <!-- Insert page contents here -->
+        <div class="button-group">
+            <a class="btn btn-primary" href="/pac_form/">PAC Form Page</a>
+            <a class="btn btn-primary" href="/home/">Return Home</a>
+        </div>
+    {% endblock %}

@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
-{% block content %}
+
+    {% block title %}Student Portal{% endblock %}
+    {% block header %}Welcome to the Student Portal{% endblock %}
+
+    {% block content %}
+        <!-- Insert page contents here -->
+        <div class="button-group">
+            <a class="btn btn-primary" href="/student_form/">Student Form Page</a>
+            <a class="btn btn-primary" href="/home/">Return Home</a>
+        </div>
+    {% endblock %}
     
-{% endblock %}

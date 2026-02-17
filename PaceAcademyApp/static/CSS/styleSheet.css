@@ -1,0 +1,19 @@
+/* CSS for the main slide-bar */
+.sidebar-desktop {
+    width: 200px;
+    min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+    .main-with-sidebar {
+        margin-left: 180px;
+    }
+}
+
+/* CSS for the on page buttons */
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
