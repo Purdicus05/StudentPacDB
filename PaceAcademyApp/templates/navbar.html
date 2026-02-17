@@ -1,1 +1,67 @@
 <!-- Navbar has to be created. Uncomment text in 'base.html' when finished. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Different Device Display / Accessibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
+
+    <!-- CDN Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!-- Code to link to my own CSS file - Local Hard drive File -->
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <!-- Font Awesome - Webpage icons -->
+    <script src="https://kit.fontawesome.com/f382cfac43.js" crossorigin="anonymous"></script>
+
+    <title>Nav Bar</title>
+</head>
+
+<body>
+  {% block navbar %}
+    <h1>Nav Bar Page</h1> <!-- Temp. Remove text when navbar has been created. -->
+        <nav class="navbar navbar-expand-lg bg-light" role="navigation">
+
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+              <ul class="navbar-nav">
+
+                <li class="nav-item">
+                  <a class="nav-link" href="home.html"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="students.html"><i class="fa-solid fa-file"></i> Student Portal</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="pacs.html"><i class="fa-solid fa-folder-open"></i> PAC Portal</a>
+                </li>
+                  <!--
+                <li class="nav-item">
+                  <a class="nav-link" href="search.html"><i class="fa-brands fa-searchengin"></i>Search</a>
+                </li>
+                  -->
+              </ul>
+            </div>
+
+            <!-- Navbar Text -->
+            <span class="navbar-text slogan-text text-end">
+                Welcome to PaceAcademy
+            </span>
+          </div>
+        </nav>
+
+  {% endblock %}
+
+</body>
+<!-- :ink to js file -->
+</html>
