@@ -4,8 +4,29 @@
     {% block header %}Welcome to PAC Form Page{% endblock %}
 
     {% block content %}
-        <!-- Insert page contents here -->
-        <div class="button-group">
-            <a class="btn btn-primary" href="/form_success/">Submit Form</a>
+    <!-- Insert page contents here -->
+    <div class="container mt-4">
+        <div class="col-lg-6 mx-auto">
+            <form method="post" class="pac-form">
+              {% csrf_token %}
+
+              <div class="mb-3">
+                <label class="form-label">First Name</label>
+                {{ form.first_name }}
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                {{ form.last_name }}
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                {{ form.email }}
+              </div>
+
+             <button type="submit" class="btn btn-primary">Submit Form</button>
+            </form>
         </div>
+    </div>
     {% endblock %}

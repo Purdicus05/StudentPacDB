@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loaders
+from .forms import AddStudentForm,  AddPacForm
 
 from .models import *
 
@@ -11,14 +12,28 @@ def home(request):
 def students(request):
     return render(request, 'students.html')
 
-def student_from(request):
-    return render(request, 'student_form.html')
+def student_form(request):
+    if request.method == "POST":
+        form = AddStudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("form_success")
+    else:
+        form = AddStudentForm()
+    return render(request, "student_form.html", {"form": form})
 
 def pacs(request):
     return render(request, 'pacs.html')
 
 def pac_form(request):
-    return render(request, 'pac_form.html')
+    if request.method == "POST":
+        form =  AddPacForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("form_success")
+    else:
+        form =  AddPacForm()
+    return render(request, "pac_form.html", {"form": form})
 
 def form_success(request):
     return render(request, 'form_success.html')

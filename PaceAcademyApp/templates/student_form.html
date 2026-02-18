@@ -4,10 +4,39 @@
     {% block header %}Welcome to the Student Form Page{% endblock %}
 
     {% block content %}
-        <!-- Insert page contents here -->
+    <!-- Insert page contents here -->
+    <div class="container mt-4">
+        <div class="col-lg-6 mx-auto">
+            <form method="post" class="student-form">
+              {% csrf_token %}
 
+              <div class="mb-3">
+                <label class="form-label">First Name</label>
+                {{ form.first_name }}
+              </div>
 
-        <div class="button-group">
-            <a class="btn btn-primary" href="/form_success/">Submit Form</a>
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                {{ form.last_name }}
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                {{ form.email }}
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Course</label>
+                {{ form.course }}
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Assigned PAC</label>
+                {{ form.assigned_pac }}
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit Form</button>
+            </form>
         </div>
+    </div>
     {% endblock %}
