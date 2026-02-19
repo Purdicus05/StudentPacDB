@@ -1,4 +1,6 @@
 from django import forms
+
+from . import models
 from .models import Students, PACs
 
 # Form to add pacs
@@ -36,6 +38,9 @@ class AddStudentForm(forms.ModelForm):
     class Meta:
         model = Students
         fields = ('first_name', 'last_name', 'email', 'course', 'assigned_pac')
+
+
+
 
         #Required to assign the form-class to each field for rendering
         widgets = {
