@@ -8,34 +8,37 @@
     <div class="container mt-4">
         <div class="col-lg-6 mx-auto">
             <form method="post" class="student-form">
-              {% csrf_token %}
+                {% csrf_token %}
 
-              <div class="mb-3">
-                <label class="form-label">First Name</label>
-                {{ form.first_name }}
-              </div>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    {{ form.first_name }}
+                </div>
 
-              <div class="mb-3">
-                <label class="form-label">Last Name</label>
-                {{ form.last_name }}
-              </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    {{ form.last_name }}
+                </div>
 
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                {{ form.email }}
-              </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    {{ form.email }}
+                </div>
 
-              <div class="mb-3">
-                <label class="form-label">Course</label>
-                {{ form.course }}
-              </div>
+                <div class="mb-3">
+                    <label class="form-label">Course</label>
+                    {{ form.course }}
+                </div>
 
-              <div class="mb-3">
-                <label class="form-label">Assigned PAC</label>
-                {{ form.assigned_pac }}
-              </div>
+                <div class="mb-3">
+                    <label class="form-label">Assigned PAC</label>
+                    {{ form.assigned_pac }}
+                </div>
 
-              <button type="submit" class="btn btn-primary">Submit Form</button>
+                <button type="submit" class="btn btn-primary"
+                    {% if is_edit %}onclick="return confirm('Save changes to this student?');"{% endif %}>
+                    {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}
+                </button>
             </form>
         </div>
     </div>

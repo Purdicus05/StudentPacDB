@@ -2,8 +2,6 @@ from django.db import models
 
 
 # Defines database tables
-
-
 class PACs(models.Model):
     id = models.AutoField(primary_key=True) #Automatically assigned primary key
     first_name = models.CharField(max_length=100, default='')

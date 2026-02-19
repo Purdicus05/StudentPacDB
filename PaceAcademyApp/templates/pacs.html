@@ -5,8 +5,62 @@
 
     {% block content %}
         <!-- Insert page contents here -->
+        <div class="container-fluid mt-4">
+              <div class="student-records">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <h4 class="mb-0">PAC Records</h4>
+                        <a class="btn btn-primary" href="/pac_form/">Add PAC</a>
+                    </div>
+              <!-- Table record headings  -->
+                  {% if pacs %}
+                      <div class="table-responsive">
+                          <table class="table table-striped align-middle">
+                            <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th class="text-end">Actions</th>
+                                  </tr>
+                            </thead>
+                          <tbody>
+                          <!-- Display records in the 'pac' database  -->
+                              {% for p in pacs %}
+                                  <tr>
+                                      <td>{{ p.first_name }} {{ p.last_name }}</td>
+                                      <td>{{ p.email }}</td>
+                                      <td>
+                                          {% if p.assigned_pac %}
+                                              {{ p.assigned_pac }}
+                                          {% else %}
+                                              <span class="text-muted">None</span>
+                                          {% endif %}
+                                      </td>
+
+                                  <!-- Created action buttons  -->
+                                      <td class="text-end">
+
+                                          <a class="btn btn-sm btn-outline-primary" href="{% url 'pac_update' p.id %}">
+                                          <i class="fa-solid fa-pen"></i> Update
+                                          </a>
+
+                                         <a class="btn btn-sm btn-outline-danger" href="{% url 'pac_delete' p.id %}">
+                                         <i class="fa-solid fa-trash"></i> Delete
+                                         </a>
+
+                                     </td>
+                                  </tr>
+                              {% endfor %}
+                             </tbody>
+                         </table>
+                     </div>
+                  <!-- No records clause  -->
+                  {% else %}
+                       <p class="text-muted mb-0">No PACs found yet.</p>
+                  {% endif %}
+              </div>
+        </div>
+        <!-- Return 'home' - Possibly remove? -->
         <div class="button-group">
-            <a class="btn btn-primary" href="/pac_form/">PAC Form Page</a>
-            <a class="btn btn-primary" href="/home/">Return Home</a>
+            <a class="btn btn-primary" href="/">Return Home</a>
         </div>
     {% endblock %}

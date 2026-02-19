@@ -30,7 +30,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* CSS for Student Form page */
+/* CSS for PAC Form page */
 .pac-form {
     border: 2px solid #414247;
     border-radius: 10px;
@@ -39,5 +39,17 @@
 }
 
 .pac-form {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* CSS for Student Record page */
+.student-records {
+    border: 2px solid #414247;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.student-records {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
