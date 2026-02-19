@@ -17,3 +17,27 @@
     flex-wrap: wrap;
     margin-top: 12px;
 }
+
+/* CSS for Student Form page */
+.student-form {
+    border: 2px solid #414247;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.student-form {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* CSS for Student Form page */
+.pac-form {
+    border: 2px solid #414247;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.pac-form {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}

@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.template import loaders
+from .forms import AddStudentForm,  AddPacForm
+
+from .models import *
 
 # Create your views here.
 def home(request):
@@ -7,14 +12,28 @@ def home(request):
 def students(request):
     return render(request, 'students.html')
 
-def student_from(request):
-    return render(request, 'student_form.html')
+def student_form(request):
+    if request.method == "POST":
+        form = AddStudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("form_success")
+    else:
+        form = AddStudentForm()
+    return render(request, "student_form.html", {"form": form})
 
 def pacs(request):
     return render(request, 'pacs.html')
 
 def pac_form(request):
-    return render(request, 'pac_form.html')
+    if request.method == "POST":
+        form =  AddPacForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("form_success")
+    else:
+        form =  AddPacForm()
+    return render(request, "pac_form.html", {"form": form})
 
 def form_success(request):
     return render(request, 'form_success.html')
@@ -30,17 +49,17 @@ def delete_student(request, id):
     return render(request, 'form_success.html')
 
 def add_pac(request):
-    return render(request, 'pac_form.html')
+        return render(request, 'add_pac.html')
 
 def add_student(request):
-    return render(request, 'student_form.html')
+    return render(request, 'add_student.html')
 
-def update_pac(request, id):
+def pac_update(request, id):
     pac = PACs.objects.get(id=id)
     context = {'pac': pac}
     return render(request, 'pac_update.html', context)
 
-def update_student(request, id):
+def student_update(request, id):
     student = Students.objects.get(id=id)
     context = {'student': student}
     return render(request, 'student_update.html', context)
