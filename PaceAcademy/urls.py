@@ -23,7 +23,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('students/', views.students, name='students'),
     path('student_form/',views.student_form, name='student_form' ),
-    path('add_student/' ,views.add_student, name='add_student' ),
 
     # Link for description on ' <int:pk> '
     # https://stackoverflow.com/questions/62804254/what-is-the-difference-between-intpk-and-pk
@@ -38,10 +37,4 @@ urlpatterns = [
     path("pacs/<int:pk>/edit/", views.pac_update, name="pac_update"),
 
     path("pacs/<int:pk>/delete/", views.delete_pac, name="pac_delete"),
-
-    path('add_pac/', views.add_pac, name='add_pac'),
-
-    #path('pac_update/', views.pac_update, name='pac_update'),
-    #path('pac_delete/', views.delete_pac, name='delete_pac'),
-    path('form_success/', views.form_success, name='form_success'),
 ]
