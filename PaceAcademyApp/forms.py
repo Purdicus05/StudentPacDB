@@ -11,6 +11,7 @@ class AddPacForm(forms.ModelForm):
         model = PACs
         fields = ('first_name', 'last_name', 'email')
 
+        # Required to assign the form-class to each field for rendering
         widgets = {
             "first_name": forms.TextInput(attrs={"class": "form-control"}),
             "last_name": forms.TextInput(attrs={"class": "form-control"}),

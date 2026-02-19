@@ -5,9 +5,65 @@
 
     {% block content %}
         <!-- Insert page contents here -->
+        <div class="container-fluid mt-4">
+              <div class="student-records">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <h4 class="mb-0">Student Records</h4>
+                        <a class="btn btn-primary" href="/student_form/">Add Student</a>
+                    </div>
+              <!-- Table record headings  -->
+                  {% if students %}
+                      <div class="table-responsive">
+                          <table class="table table-striped align-middle">
+                            <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Course</th>
+                                    <th>Assigned PAC</th>
+                                    <th class="text-end">Actions</th>
+                                  </tr>
+                            </thead>
+                          <tbody>
+                          <!-- Display records in the 'students' database  -->
+                              {% for s in students %}
+                                  <tr>
+                                      <td>{{ s.first_name }} {{ s.last_name }}</td>
+                                      <td>{{ s.email }}</td>
+                                      <td>{{ s.course }}</td>
+                                      <td>
+                                          {% if s.assigned_pac %}
+                                              {{ s.assigned_pac }}
+                                          {% else %}
+                                              <span class="text-muted">None</span>
+                                          {% endif %}
+                                      </td>
+
+                                  <!-- Created action buttons  -->
+                                      <td class="text-end">
+
+                                          <a class="btn btn-sm btn-outline-primary" href="{% url 'student_update' s.id %}">
+                                          <i class="fa-solid fa-pen"></i> Update
+                                          </a>
+
+                                         <a class="btn btn-sm btn-outline-danger" href="{% url 'student_delete' s.id %}">
+                                         <i class="fa-solid fa-trash"></i> Delete
+                                         </a>
+
+                                     </td>
+                                  </tr>
+                              {% endfor %}
+                             </tbody>
+                         </table>
+                     </div>
+                  <!-- No records clause  -->
+                  {% else %}
+                       <p class="text-muted mb-0">No students found yet.</p>
+                  {% endif %}
+              </div>
+        </div>
+        <!-- Return 'home' - Possibly remove? -->
         <div class="button-group">
-            <a class="btn btn-primary" href="/student_form/">Student Form Page</a>
-            <a class="btn btn-primary" href="/home/">Return Home</a>
+            <a class="btn btn-primary" href="/">Return Home</a>
         </div>
     {% endblock %}
-    
