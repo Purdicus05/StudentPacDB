@@ -46,6 +46,7 @@ class AddStudentForm(forms.ModelForm):
         }
 
     #This function makes sure that the list of PACs is calculated at runtime not at import time
+    #This prevents issues with newly added pacs not being shown
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['assigned_pac'].queryset = PACs.objects.all()
