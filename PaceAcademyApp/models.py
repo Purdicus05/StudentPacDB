@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Defines database tables
 class PACs(models.Model):
     id = models.AutoField(primary_key=True) #Automatically assigned primary key
@@ -12,6 +11,9 @@ class PACs(models.Model):
     class Meta :
         verbose_name = "PAC"
         verbose_name_plural = 'PACs'
+        constraints = [
+            models.UniqueConstraint(fields=['email'], name='unique_pac'),
+        ]
 
     #Returned when add completed
     def __str__(self):
@@ -29,8 +31,10 @@ class Students(models.Model):
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = 'Students'
+        constraints = [
+            models.UniqueConstraint(fields=['email'], name='unique_students'),
+        ]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}, PAC ID = {self.assigned_pac.id}"
-
 
