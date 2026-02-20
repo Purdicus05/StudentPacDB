@@ -20,103 +20,113 @@
     <!-- Title block to be used across all templates -->
     <title>{% block title %}PaceAcademy{% endblock %}</title>
 </head>
+    <body>
 
-<body>
+    <!-- Top Nav Bar -->
+    <div class="w-100 p-2 top-nav-bar"></div>
 
-<!-- Top bar for mobile toggle button use -->
+    <!-- Mobile toggle navbar -->
     <nav class="navbar bg-light border-bottom d-lg-none">
         <div class="container-fluid">
-
             <button class="btn btn-outline-secondary" type="button"
                     data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
                     aria-controls="sidebarOffcanvas" aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
-            <span class="navbar-text ms-2">
-                Welcome to PaceAcademy
-            </span>
         </div>
     </nav>
 
-<!-- Desktop sidebar  -->
-    <div class="d-none d-lg-flex flex-column position-fixed top-0 start-0 bg-light border-end p-3 sidebar-desktop">
-        <a href="/home/" class="d-flex align-items-center mb-3 text-decoration-none link-dark">
-            <span class="fs-4">PaceAcademy</span>
-        </a>
+    <!-- Main layout -->
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
 
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a class="nav-link link-dark" href="/">
-                <i class="fa-solid fa-house me-2"></i> Home</a>
-        </li>
+            <!-- Desktop sidebar -->
+            <div class="col-auto d-none d-lg-flex p-0">
+                <div class="d-flex flex-column sidebar-desktop bg-light border-end p-3">
 
-        <li class="nav-item">
-            <a class="nav-link link-dark" href="/students/">
-                <i class="fa-solid fa-file me-2"></i> Student Portal</a>
-        </li>
+                    <a href="/home/" class="d-flex align-items-center mb-3 text-decoration-none link-dark">
+                        <img class="img-fluid" src="..\static\images\Pace_Academy_Logo.webp" alt="PaceAcademy Logo" height="40">
+                    </a>
 
-        <li class="nav-item">
-            <a class="nav-link link-dark" href="/pacs/">
-                <i class="fa-solid fa-folder-open me-2"></i> PAC Portal</a>
-        </li>
-    </ul>
+                    <hr>
 
-    <hr>
-        <div class="text-muted small">
-            Welcome to PaceAcademy
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a class="nav-link link-dark" href="/">
+                                <i class="fa-solid fa-house me-2"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark" href="/students/">
+                                <i class="fa-solid fa-file me-2"></i> Student Portal
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark" href="/pacs/">
+                                <i class="fa-solid fa-folder-open me-2"></i> PAC Portal
+                            </a>
+                        </li>
+                    </ul>
+
+                    <hr>
+                    <div class="text-muted small container-fluid">Welcome to PaceAcademy</div>
+
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="col p-4">
+                <div class="container-fluid">
+                    <header class="mb-3 text-center">
+                        <h2>{% block header %}{% endblock %}</h2>
+                    </header>
+                </div>
+
+                <main>
+                    {% block content %}{% endblock %}
+                </main>
+
+            </div>
+
         </div>
     </div>
 
-<!-- Mobile sidebar  -->
+    <!-- Mobile offcanvas sidebar -->
     <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">PaceAcademy</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            
+        </div>
+        <div class="offcanvas-header">
+            <img class="img-fluid" src="..\static\images\Pace_Academy_Logo.webp" alt="PaceAcademy Logo">
         </div>
 
         <div class="offcanvas-body">
             <ul class="nav nav-pills flex-column">
-
                 <li class="nav-item">
                     <a class="nav-link link-dark" href="/">
-                        <i class="fa-solid fa-house me-2"></i> Home</a>
+                        <i class="fa-solid fa-house me-2"></i> Home
+                    </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link link-dark" href="/students/">
-                        <i class="fa-solid fa-file me-2"></i> Student Portal</a>
+                        <i class="fa-solid fa-file me-2"></i> Student Portal
+                    </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link link-dark" href="/pacs/">
-                        <i class="fa-solid fa-folder-open me-2"></i> PAC Portal</a>
+                        <i class="fa-solid fa-folder-open me-2"></i> PAC Portal
+                    </a>
                 </li>
             </ul>
 
             <hr>
-            <div class="text-muted small">
-                Welcome to PaceAcademy
-            </div>
+            <div class="text-muted small container-fluid">Welcome to PaceAcademy</div>
         </div>
     </div>
 
-<!-- Main content area -->
-    <div class="main-with-sidebar p-4">
-
-        <header class="mb-3">
-            <h2>{% block header %}{% endblock %}</h2>
-        </header>
-
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-
-    </div>
-
-<!-- Bootstrap java script CDN -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+    </body>
 </html>
