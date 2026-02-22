@@ -1,4 +1,4 @@
-/* CSS for the main slide-bar - desktop only */
+/* CSS for the main slide-bar - desktop only (Designing for ipads to still use burger icon)*/
 @media (min-width: 992px) {
     .sidebar-desktop {
         position: fixed;
@@ -15,13 +15,28 @@
     }
 }
 
-
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    overflow-y: auto;
+    z-index: 1050;
+ }
+.col.p-4 {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/Background-Image.webp");
+}
 
 /* CSS for top Nav Bar */
 .top-nav-bar {
     position: relative;
     z-index: 100;
     background-color: #054676;
+}
+
+.footer {
+    background-color: lightgrey;
 }
 
 /* CSS for the on page buttons */
@@ -31,6 +46,24 @@
     flex-wrap: wrap;
     margin-top: 12px;
 }
+
+.button-pa {
+    border-color: #054676;
+    border-radius: 5px;
+    background-color: #054676;
+    padding: 0 20px 5px 20px;
+    color: #ffffff;
+    
+}
+
+.button-pa:hover {
+    border-color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a5b8a;
+    padding: 0 20px 5px 20px;
+    color: #ffffff;
+}
+
 
 /* CSS for Student Form page */
 .student-form {
@@ -58,7 +91,6 @@
 
 /* CSS for Student Record page */
 .student-records {
-    border: 2px solid #414247;
     border-radius: 10px;
     padding: 20px;
     background-color: #ffffff;
@@ -74,3 +106,38 @@
     text-align: justify;
 }
 
+/* Cards on Home Page */
+.cards-row {
+    background-color: transparent;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.card-type {
+    background: transparent;
+    border-radius: 4px;
+    padding: 48px 36px 44px;
+    flex: 1 1 280px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #054676;
+    background-color: #054676;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}

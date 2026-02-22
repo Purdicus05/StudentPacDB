@@ -13,20 +13,54 @@
                 <img src="..\static\images\Pace_Academy_Home_Page_Hero.webp" class="img-fluid" alt="Pace Academy Hero image">
             </div>
 
-            <div class="col-lg-7 col-12 col-md-8 container-fluid">
-                <p class="text-muted text-justify-custom pt-2">
-                Welcome to PaceAcademy! 
+            <div class="col-lg-7 col-14 col-md-10 container-fluid">
+                <p class="text-justify-custom pt-4" style="color: #054676;">
+                <strong>Welcome to PaceAcademy!</strong>
                 </p>
                 <p class="text-muted text-justify-custom pt-2"> 
-                Here Personal academic coaches (PACs) will be able to assign students
-                to their personal academic coaches and keep up-to-date with scheduled meetings. Everything
-                is all combined within the one place to keep things streamlined for communication whilst
-                keeping it simple.
+                Here, Personal Academic Coaches (PACs) will be able to assign students
+                to their corresponding PAC's whilst also keeping up-to-date with scheduled meetings. Everything
+                is combined within one place to keep communication streamline and simple.
                 </p>
             </div>
 
-            <div class="container-fluid col-lg-5 col-12 col-md-8 pt-4">
-                <img class="img-fluid " src="..\static\images\Pace_Academy_Home_Page_Banner.webp" alt="Home Page Banner">
+            <div class="container-fluid pt-4 d-block">
+                <img class="w-100" src="..\static\images\Pace_Academy_Home_Page_Banner.webp" alt="Home Page Banner" style="height: 200px; object-fit: cover;">
+            </div>
+
+            <div class="container-fluid">
+                <div class="cards-row">
+                    <div class="card-type">
+                        <div class="icon-circle">
+                            <!-- Student icon -->
+                            <img class="rounded-circle img-fluid" src="..\static\images\Students_Icon.webp" alt="Student Icon">
+                        </div>
+                        <div class="container-fluid pb-3">
+                            <h5 class="card-title">Student Portal</h5>
+                            <p class="card-text">
+                                View the student database to create, read, update and delete records, and view what PAC they are assigned to. 
+                            </p>
+                        </div>
+                        <div class="container-fluid">
+                            <button type="button" href="#" class="button-pa">View Students</button>
+                        </div>
+                    </div>
+                    <div class="card-type">
+                        <div class="icon-circle">
+                            <!-- Pac icon -->
+                            <img class="rounded-circle img-fluid" src="..\static\images\PACs_Icon.webp" alt="PAC Icon">
+                        </div>
+                        <div class="container-fluid pb-4">
+                            <h5 class="card-title">PAC Portal</h5>
+                            <p class="card-text">
+                                View the PAC database to create, read, update and delete records.
+                            </p>
+                        </div>
+                        <div class="container-fluid">
+                            <button href="#" class="button-pa">View PACs</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     {% endblock %}
