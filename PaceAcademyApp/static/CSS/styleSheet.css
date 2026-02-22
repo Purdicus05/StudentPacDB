@@ -25,7 +25,11 @@
     z-index: 1050;
  }
 .col.p-4 {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/Background-Image.webp");
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/Background_Alt.webp");
+}
+
+@view-transition {
+    navigation: auto;
 }
 
 /* CSS for top Nav Bar */
@@ -35,35 +39,61 @@
     background-color: #054676;
 }
 
-.footer {
-    background-color: lightgrey;
-}
-
 /* CSS for the on page buttons */
-.button-group {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-}
 
 .button-pa {
-    border-color: #054676;
-    border-radius: 5px;
+    border-color: transparent;
+    border-radius: 4px;
     background-color: #054676;
-    padding: 0 20px 5px 20px;
+    padding: 3px 20px 6px 20px;
     color: #ffffff;
-    
+    text-decoration: none;
 }
 
 .button-pa:hover {
-    border-color: #ffffff;
-    border-radius: 5px;
-    background-color: #1a5b8a;
-    padding: 0 20px 5px 20px;
+    border-radius: 4px;
+    background-color: #1f6495;
+    padding: 3px 20px 6px 20px;
     color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
 }
 
+.button-pa-update {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #054676;
+    padding: 3px 20px 6px 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button-pa-update:hover {
+    border-radius: 4px;
+    background-color: #1f6495;
+    padding: 3px 20px 6px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-delete {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #054676;
+    padding: 3px 20px 6px 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button-pa-delete:hover {
+    border-radius: 4px;
+    background-color: #1f6495;
+    padding: 3px 20px 6px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
 
 /* CSS for Student Form page */
 .student-form {
@@ -90,22 +120,50 @@
 }
 
 /* CSS for Student Record page */
-.student-records {
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #ffffff;
+table, th, td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .student-records {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 100%;
 }
 
-
-/* Basic Text CSS if needed */
-.text-justify-custom {
-    text-align: justify;
+.student_header_table {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
 }
 
+.student_body_table {
+    width: 95%;
+    max-height: 90%;
+    background-color: #fffb;
+    border-radius: .6rem;
+
+    margin: .8rem auto;
+    overflow: auto;
+}
+
+.student_body_table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.student_body_table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.student_body_table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
 /* Cards on Home Page */
 .cards-row {
     background-color: transparent;

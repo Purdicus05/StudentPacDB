@@ -75,10 +75,10 @@
             </div>
 
             <!-- Main content -->
-            <div class="col p-4">
+            <div class="main_body col p-4">
                 <div class="container-fluid">
                     <header class="mb-3 text-center">
-                        <h2>{% block header %}{% endblock %}</h2>
+                        <h1 class="display-6"><strong>{% block header %}{% endblock %}</strong></h1>
                     </header>
                 </div>
 
@@ -86,11 +86,6 @@
                     {% block content %}{% endblock %}
                 </main>
 
-                <footer>
-                    <div class="col footer fixed-bottom">
-                        <p>Pace Academy 2026</p>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>
