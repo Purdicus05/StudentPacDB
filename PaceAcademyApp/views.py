@@ -17,7 +17,7 @@ def student_form(request):
         form = AddStudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("form_success")
+            return redirect("students")
     else:
         form = AddStudentForm()
     return render(request, "student_form.html", {"form": form})
@@ -31,13 +31,10 @@ def pac_form(request):
         form = AddPacForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("form_success")
+            return redirect("pacs")
     else:
         form =  AddPacForm()
     return render(request, "pac_form.html", {"form": form})
-
-def form_success(request):
-    return render(request, 'form_success.html')
 
 def delete_pac(request, pk):
     # Deleting record using 'pk' Values
@@ -54,14 +51,6 @@ def student_delete(request, pk):
         student.delete()
         return redirect("students")
     return render(request, "student_delete.html", {"student": student})
-
-def add_pac(request):
-        return render(request, 'add_pac.html')
-
-def add_student(request):
-    return render(request, 'add_student.html')
-
-
 
 def pac_update(request, pk):
     pac = get_object_or_404(PACs, pk=pk)
