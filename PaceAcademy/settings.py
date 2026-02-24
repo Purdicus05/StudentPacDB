@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f6nbh$f2a!o9g+cvr9lt4_fs8jszy^cfe7o5u!!7j7wu4%&w8-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['studentpacdb.onrender.com',
                  '127.0.0.1']
