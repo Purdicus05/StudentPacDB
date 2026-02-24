@@ -10,7 +10,7 @@
         z-index: 1050;
     }
 
-    .col.p-4 {
+    .main_body {
         margin-left: 250px;
     }
 }
@@ -24,8 +24,13 @@
     overflow-y: auto;
     z-index: 1050;
  }
-.col.p-4 {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/Background_Alt.webp");
+
+.main_body {
+    background-image: linear-gradient(to right, #fffb, #fffb), url("../images/Background_Alt_1.webp");
+}
+
+.main_body .student_body_table {
+    height: 90vh;
 }
 
 @view-transition {
@@ -45,15 +50,16 @@
     border-color: transparent;
     border-radius: 4px;
     background-color: #054676;
-    padding: 3px 20px 6px 20px;
+    padding: 3px 18px 6px 18px;
     color: #ffffff;
     text-decoration: none;
+    transition-duration: 0.2s;
 }
 
 .button-pa:hover {
     border-radius: 4px;
     background-color: #1f6495;
-    padding: 3px 20px 6px 20px;
+    padding: 4px 20px 7px 20px;
     color: #ffffff;
     text-decoration: none;
     transition-duration: 0.2s;
@@ -62,34 +68,38 @@
 .button-pa-update {
     border-color: transparent;
     border-radius: 4px;
-    background-color: #054676;
-    padding: 3px 20px 6px 20px;
+    background-color: #0D7605;
+    padding: 3px 12px 6px 12px;
     color: #ffffff;
     text-decoration: none;
+    margin-right: .1rem;
+    transition-duration: 0.2s;
 }
 
 .button-pa-update:hover {
     border-radius: 4px;
-    background-color: #1f6495;
-    padding: 3px 20px 6px 20px;
+    background-color: #0b9901;
+    padding: 3px 14px 6px 14px;
     color: #ffffff;
     text-decoration: none;
     transition-duration: 0.2s;
+    
 }
 
 .button-pa-delete {
     border-color: transparent;
     border-radius: 4px;
-    background-color: #054676;
-    padding: 3px 20px 6px 20px;
+    background-color: #76050e;
+    padding: 3px 12px 6px 12px;
     color: #ffffff;
     text-decoration: none;
+    transition-duration: 0.2s;
 }
 
 .button-pa-delete:hover {
     border-radius: 4px;
-    background-color: #1f6495;
-    padding: 3px 20px 6px 20px;
+    background-color: #a00411;
+    padding: 3px 14px 6px 14px;
     color: #ffffff;
     text-decoration: none;
     transition-duration: 0.2s;
@@ -121,8 +131,34 @@
 
 /* CSS for Student Record page */
 table, th, td {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+td {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
+thead {
+    background-color: #054776;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+thead th {
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
 }
 
 .student-records {
@@ -131,12 +167,13 @@ table, th, td {
     box-shadow: 0 5px 15px #0004;
     overflow: hidden;
     max-width: 100%;
+    min-width: 0;
 }
 
 .student_header_table {
     width: 100%;
     height: 10%;
-    background-color: #fff4;
+    background-color: #fff8;
     padding: .8rem 1rem;
 }
 
@@ -145,9 +182,25 @@ table, th, td {
     max-height: 90%;
     background-color: #fffb;
     border-radius: .6rem;
-
     margin: .8rem auto;
     overflow: auto;
+    min-width: 0;
+}
+
+.student_body_table table {
+    min-width: 700px;
+    width: 100%;
+}
+
+.student_body_table th,
+.student_body_table td {
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.student_body_table th:last-child,
+.student_body_table td:last-child {
+    min-width: 200px;
 }
 
 .student_body_table::-webkit-scrollbar {
@@ -164,6 +217,7 @@ table, th, td {
 .student_body_table:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
+
 /* Cards on Home Page */
 .cards-row {
     background-color: transparent;
