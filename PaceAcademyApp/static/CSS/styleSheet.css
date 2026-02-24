@@ -26,9 +26,7 @@
  }
 
 .main_body {
-    background-image: linear-gradient(to right, #fffd, #fffd), url("../images/Background_Alt_1.webp");
-    background-size: cover;
-    min-height: 100vh;
+    background-image: linear-gradient(to right, #fffb, #fffb), url("../images/Background_Alt_1.webp");
 }
 
 .main_body .student_body_table {
@@ -61,7 +59,7 @@
 .button-pa:hover {
     border-radius: 4px;
     background-color: #1f6495;
-    padding: 3px 19px 6px 19px;
+    padding: 4px 20px 7px 20px;
     color: #ffffff;
     text-decoration: none;
     transition-duration: 0.2s;
@@ -168,7 +166,7 @@ tbody tr:hover {
     background-color: #fff5;
     box-shadow: 0 5px 15px #0004;
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 100%;
     min-width: 0;
 }
 
@@ -214,12 +212,10 @@ tbody tr:hover {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
-    overflow: hidden;
 }
 
 .student_body_table:hover::-webkit-scrollbar-thumb {
     visibility: visible;
-    overflow: hidden;
 }
 
 /* Cards on Home Page */
@@ -229,6 +225,7 @@ tbody tr:hover {
     gap: 28px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1000px;
     width: 100%;
 }
 

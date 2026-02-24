@@ -1,4 +1,4 @@
-    from django.db import models
+from django.db import models
 
 # Defines database tables
 class PACs(models.Model):
