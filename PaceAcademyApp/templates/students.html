@@ -5,7 +5,7 @@
 
     {% block content %}
         <!-- Insert page contents here -->
-        <div class="container-fluid mt-4">
+        <div class="container-fluid mt-4" style="overflow-x: hidden;">
 
             <div class="container-fluid d-block pb-4">
                 <img class="w-100 rounded-1" src="..\static\images\Students_Banner_Image.webp" alt="Home Page Banner" style="height: 200px; object-fit: cover;">
@@ -18,7 +18,7 @@
                 </div>
               <!-- Table record headings  -->
                 {% if students %}
-                <div class="student_body_table table-responsive justify-content-center">
+                <div class="student_body_table">
                     <table class="table-pa align-middle">
                         <thead>
                             <tr>
@@ -26,7 +26,7 @@
                                 <th>Email</th>
                                 <th>Course</th>
                                 <th>Assigned PAC</th>
-                                <th class="text-end">Actions</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                     <tbody>
@@ -46,12 +46,11 @@
 
                             <!-- Created action buttons  -->
                                 <td class="text-end">
-
-                                    <a class="btn btn-sm btn-outline-primary" href="{% url 'student_update' s.id %}">
+                                    <a class="button-pa-update btn-sm" href="{% url 'student_update' s.id %}">
                                     <i class="fa-solid fa-pen"></i> Update
                                     </a>
 
-                                    <a class="btn btn-sm btn-outline-danger" href="{% url 'student_delete' s.id %}">
+                                    <a class="button-pa-delete btn-sm" href="{% url 'student_delete' s.id %}">
                                     <i class="fa-solid fa-trash"></i> Delete
                                     </a>
 
