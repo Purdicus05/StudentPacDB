@@ -1,4 +1,6 @@
 from django import forms
+
+from . import models
 from .models import Students, PACs
 
 # Form to add pacs
@@ -37,6 +39,9 @@ class AddStudentForm(forms.ModelForm):
         model = Students
         fields = ('first_name', 'last_name', 'email', 'course', 'assigned_pac')
 
+
+
+
         #Required to assign the form-class to each field for rendering
         widgets = {
             "first_name": forms.TextInput(attrs={"class": "form-control"}),
@@ -47,6 +52,7 @@ class AddStudentForm(forms.ModelForm):
         }
 
     #This function makes sure that the list of PACs is calculated at runtime not at import time
+    #This prevents issues with newly added pacs not being shown
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['assigned_pac'].queryset = PACs.objects.all()

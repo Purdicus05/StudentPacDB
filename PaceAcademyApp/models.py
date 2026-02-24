@@ -15,6 +15,7 @@ class PACs(models.Model):
             models.UniqueConstraint(fields=['email'], name='unique_pac'),
         ]
 
+
     #Returned when add completed
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -34,6 +35,7 @@ class Students(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['email'], name='unique_students'),
         ]
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}, PAC ID = {self.assigned_pac.id}"
