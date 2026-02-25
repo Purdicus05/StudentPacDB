@@ -177,6 +177,25 @@ p {
     transition-duration: 0.2s;
 }
 
+.button-pa-secondary {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #7a7a7a;
+    padding: 5px 12px 0 12px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-secondary:hover {
+    border-radius: 4px;
+    background-color: #a5a5a5;
+    padding: 5px 14px 0 14px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
 /* CSS for Student Form page */
 .student-form {
     border-radius: .8rem 1rem;
@@ -190,7 +209,25 @@ p {
     margin-right: auto;
 }
 
+.pac-form {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 .student_body_form form {
+    margin: 0 auto;
+    padding: 25px 35px;
+    border: 2px #054676 solid;
+    border-radius: .8rem 1rem;
+}
+
+.pac_body_form form {
     margin: 0 auto;
     padding: 25px 35px;
     border: 2px #054676 solid;
@@ -204,7 +241,24 @@ p {
     padding: .8rem 1rem;
 }
 
+.pac_header_form {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
 .student_body_form {
+    width: 95%;
+    max-height: 90%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+}
+
+.pac_body_form {
     width: 95%;
     max-height: 90%;
     background-color: #fffb;
@@ -227,18 +281,6 @@ form input {
 form select {
     height: 45px;
     width: 100%;
-}
-
-/* CSS for PAC Form page */
-.pac-form {
-    border: 2px solid #414247;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.pac-form {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 /* CSS for Student Record page */
@@ -271,6 +313,18 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: rgba(62, 152, 255, 0.183);
+}
+
+.delete-records {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 600px;
+    min-width: 0;
+    min-height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .student-records {

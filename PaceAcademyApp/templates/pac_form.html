@@ -6,30 +6,39 @@
     {% block content %}
     <!-- Insert page contents here -->
     <div class="container mt-4">
-        <div class="col-lg-6 mx-auto">
-            <form method="post" class="student-form">
-                {% csrf_token %}
+        <div class="pac-form">
 
-                <div class="mb-3">
-                    <label class="form-label">First Name</label>
-                    {{ form.first_name }}
-                </div>
+            <div class="pac_header_form d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                <h3 class="mb-0">PAC Record</h3>
+            </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Last Name</label>
-                    {{ form.last_name }}
-                </div>
+            <div class="pac_body_form mx-auto">
+                <form method="post" class="container">
+                    {% csrf_token %}
 
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    {{ form.email }}
-                </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">First Name</label>
+                            {{ form.first_name }}
+                        </div>
 
-                <button type="submit" class="btn btn-primary"
-                    {% if is_edit %}onclick="return confirm('Save changes to this pac record?');"{% endif %}>
-                    {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}
-                </button>
-            </form>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Last Name</label>
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <button type="submit" class="button-pa"
+                        {% if is_edit %}onclick="return confirm('Save changes to this pac record?');"{% endif %}>
+                        {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     {% endblock %}
