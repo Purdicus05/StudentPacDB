@@ -1,18 +1,75 @@
 /* CSS for the main slide-bar - desktop only (Designing for ipads to still use burger icon)*/
-@media (min-width: 992px) {
+/* sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px */
+
+@media (min-width: 1400px) {
     .sidebar-desktop {
         position: fixed;
         top: 0;
         left: 0;
         height: 100vh;
-        width: 250px;
+        width: 320px;
         overflow-y: auto;
         z-index: 1050;
     }
 
     .main_body {
-        margin-left: 250px;
+        margin-left: 320px;
     }
+
+    .home {
+        font-weight: 400;
+        font-size: large;
+    }
+
+    .home-card {
+        font-weight: 300;
+        font-size: large;
+    }
+    .home-card h5 {
+        font-weight: 600;
+        font-size: x-large;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px){
+    .sidebar-desktop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+
+    .main_body {
+        margin-left: 280px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .sidebar-desktop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 240px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+
+    .main_body {
+        margin-left: 240px;
+    }
+}
+
+p {
+    font-family: century-gothic;
 }
 
 .sidebar-mobile {
@@ -33,6 +90,19 @@
 
 .main_body .student_body_table {
     height: 90vh;
+}
+
+.image-with-text {
+    width: 75%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-with-text img {
+    max-width: 350px;
+    float: left;
+    margin-right: 20px;
 }
 
 @view-transition {
@@ -109,14 +179,54 @@
 
 /* CSS for Student Form page */
 .student-form {
-    border: 2px solid #414247;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #ffffff;
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.student-form {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.student_body_form form {
+    margin: 0 auto;
+    padding: 25px 35px;
+    border: 2px #054676 solid;
+    border-radius: .8rem 1rem;
+}
+
+.student_header_form {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
+.student_body_form {
+    width: 95%;
+    max-height: 90%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+}
+
+form .name {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form input {
+    height: 45px;
+    width: 100%;
+}
+
+form select {
+    height: 45px;
+    width: 100%;
 }
 
 /* CSS for PAC Form page */
@@ -160,7 +270,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: #fff6;
+    background-color: rgba(62, 152, 255, 0.183);
 }
 
 .student-records {
@@ -168,7 +278,16 @@ tbody tr:hover {
     background-color: #fff5;
     box-shadow: 0 5px 15px #0004;
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 1400px;
+    min-width: 0;
+}
+
+.pac-records {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1400px;
     min-width: 0;
 }
 
@@ -179,17 +298,39 @@ tbody tr:hover {
     padding: .8rem 1rem;
 }
 
+.pac_header_table {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
 .student_body_table {
     width: 95%;
-    max-height: 90%;
     background-color: #fffb;
     border-radius: .6rem;
     margin: .8rem auto;
     overflow: auto;
     min-width: 0;
+    max-height: 60vh;
+}
+
+.pac_body_table {
+    width: 95%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+    max-height: 60vh;
 }
 
 .student_body_table table {
+    min-width: 700px;
+    width: 100%;
+}
+
+.pac_body_table table {
     min-width: 700px;
     width: 100%;
 }
@@ -200,12 +341,28 @@ tbody tr:hover {
     white-space: nowrap;
 }
 
+.pac_body_table th,
+.pac_body_table td {
+    min-width: 120px;
+    white-space: nowrap;
+}
+
 .student_body_table th:last-child,
 .student_body_table td:last-child {
     min-width: 200px;
 }
 
+.pac_body_table th:last-child,
+.pac_body_table td:last-child {
+    min-width: 200px;
+}
+
 .student_body_table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.pac_body_table::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
 }
@@ -217,7 +374,19 @@ tbody tr:hover {
     overflow: hidden;
 }
 
+.pac_body_table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+    overflow: hidden;
+}
+
 .student_body_table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    overflow: hidden;
+}
+
+.pac_body_table:hover::-webkit-scrollbar-thumb {
     visibility: visible;
     overflow: hidden;
 }
@@ -226,18 +395,17 @@ tbody tr:hover {
 .cards-row {
     background-color: transparent;
     display: flex;
-    gap: 28px;
+    gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
 }
 
 .card-type {
     background: transparent;
     border-radius: 4px;
-    padding: 48px 36px 44px;
-    flex: 1 1 280px;
-    max-width: 400px;
+    padding: 24px 36px 22px;
+    flex: 1 1 260px;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -245,8 +413,8 @@ tbody tr:hover {
 }
 
 .icon-circle {
-    width: 120px;
-    height: 120px;
+    width: clamp(80px, 10vw, 120px);
+    height: clamp(80px, 10vw, 120px);
     border-radius: 50%;
     border: 1px solid #054676;
     background-color: #054676;

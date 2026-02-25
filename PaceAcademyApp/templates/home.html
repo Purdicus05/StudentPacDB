@@ -5,58 +5,57 @@
 
     {% block content %}
         <!-- Insert page contents here --> 
+        <div class="container">
+            <div class="row mb-4">
 
-        <div class="row mb-4">
+                <div class="image-with-text"> 
+                    <img src="..\static\images\Pace_Academy_Home_Page_Hero.webp" class="col-lg-4 col-md-10 col-sm-6 float-md-start rounded-1 mb-4" alt="Pace Academy Hero image">
 
-            <div class="col-lg-5 col-12 col-md-8 container-fluid">
-                <img src="..\static\images\Pace_Academy_Home_Page_Hero.webp" class="img-fluid rounded-1" alt="Pace Academy Hero image">
-            </div>
+                    <h5 class="pt-4" style="color: #054676;">
+                    <strong>Welcome to PaceAcademy!</strong>
+                    </h5>
+                    <p class="home text-muted text-justify-custom pt-2"> 
+                    Here, Personal Academic Coaches (PACs) will be able to assign students
+                    to their corresponding PAC's whilst also keeping up-to-date with scheduled meetings. Everything
+                    is combined within one place to keep communication streamline and simple.
+                    </p>
+                </div>
 
-            <div class="col-lg-7 col-14 col-md-10 container-fluid">
-                <p class="text-justify-custom pt-4" style="color: #054676;">
-                <strong>Welcome to PaceAcademy!</strong>
-                </p>
-                <p class="text-muted text-justify-custom pt-2"> 
-                Here, Personal Academic Coaches (PACs) will be able to assign students
-                to their corresponding PAC's whilst also keeping up-to-date with scheduled meetings. Everything
-                is combined within one place to keep communication streamline and simple.
-                </p>
-            </div>
+                <div class="container-fluid pt-1 d-block">
+                    <img class="w-100 rounded-1" src="..\static\images\Pace_Academy_Home_Page_Banner.webp" alt="Home Page Banner" style="max-height: 300px; object-fit: cover;">
+                </div>
 
-            <div class="container-fluid pt-4 d-block">
-                <img class="w-100 rounded-1" src="..\static\images\Pace_Academy_Home_Page_Banner.webp" alt="Home Page Banner" style="height: 200px; object-fit: cover;">
-            </div>
-
-            <div class="container-fluid">
-                <div class="cards-row">
-                    <div class="card-type">
-                        <div class="icon-circle">
-                            <!-- Student icon -->
-                            <img class="rounded-circle img-fluid" src="..\static\images\Students_Icon.webp" alt="Student Icon">
+                <div class="container-fluid">
+                    <div class="cards-row home-card">
+                        <div class="card-type col-sm">
+                            <div class="icon-circle">
+                                <!-- Student icon -->
+                                <img class="rounded-circle img-fluid" src="..\static\images\Students_Icon.webp" alt="Student Icon">
+                            </div>
+                            <div class="container-fluid pb-3">
+                                <h5 class="card-title">Student Portal</h5>
+                                <p class="card-text">
+                                    View the student database to create, read, update and delete records, and view what PAC they are assigned to. 
+                                </p>
+                            </div>
+                            <div class="container-fluid">
+                                <a type="button" href="/students/" class="button-pa">View Students ></a>
+                            </div>
                         </div>
-                        <div class="container-fluid pb-3">
-                            <h5 class="card-title">Student Portal</h5>
-                            <p class="card-text">
-                                View the student database to create, read, update and delete records, and view what PAC they are assigned to. 
-                            </p>
-                        </div>
-                        <div class="container-fluid">
-                            <a type="button" href="/students/" class="button-pa">View Students ></a>
-                        </div>
-                    </div>
-                    <div class="card-type">
-                        <div class="icon-circle">
-                            <!-- Pac icon -->
-                            <img class="rounded-circle img-fluid" src="..\static\images\PACs_Icon.webp" alt="PAC Icon">
-                        </div>
-                        <div class="container-fluid pb-3">
-                            <h5 class="card-title">PAC Portal</h5>
-                            <p class="card-text pb-4">
-                                View the PAC database to create, read, update and delete records.
-                            </p>
-                        </div>
-                        <div class="container-fluid">
-                            <a type="button" href="/pacs/" class="button-pa">View PACs ></a>
+                        <div class="card-type col-sm">
+                            <div class="icon-circle">
+                                <!-- Pac icon -->
+                                <img class="rounded-circle img-fluid" src="..\static\images\PACs_Icon.webp" alt="PAC Icon">
+                            </div>
+                            <div class="container-fluid pb-3">
+                                <h5 class="card-title">PAC Portal</h5>
+                                <p class="card-text pb-4">
+                                    View the PAC database to create, read, update and delete records.
+                                </p>
+                            </div>
+                            <div class="container-fluid">
+                                <a type="button" href="/pacs/" class="button-pa">View PACs ></a>
+                            </div>
                         </div>
                     </div>
                 </div>

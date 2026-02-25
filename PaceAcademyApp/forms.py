@@ -39,21 +39,13 @@ class AddStudentForm(forms.ModelForm):
         model = Students
         fields = ('first_name', 'last_name', 'email', 'course', 'assigned_pac')
 
-
-
-
-        #Required to assign the form-class to each field for rendering
-        widgets = {
-            "first_name": forms.TextInput(attrs={"class": "form-control"}),
-            "last_name": forms.TextInput(attrs={"class": "form-control"}),
-            "email": forms.EmailInput(attrs={"class": "form-control"}),
-            "course": forms.Select(attrs={"class": "form-select"}),
-            "assigned_pac": forms.Select(attrs={"class": "form-select"}),
-        }
-
     #This function makes sure that the list of PACs is calculated at runtime not at import time
     #This prevents issues with newly added pacs not being shown
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['first_name'].widget.attrs.update({"class": "form-control", "placeholer": "Enter first name"})
+        self.fields['last_name'].widget.attrs.update({"class": "form-control", "placeholer": "Enter last name"})
+        self.fields['email'].widget.attrs.update({"class": "form-control", "placeholer": "Enter email"})
+        self.fields['course'].widget.attrs.update({"class": "form-select", "arial_label": "Select course"})
+        self.fields['assigned_pac'].widget.attrs.update({"class": "form-select", "arial_label": "Select PAC"})
         self.fields['assigned_pac'].queryset = PACs.objects.all()
-
